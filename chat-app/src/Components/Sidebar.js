@@ -10,9 +10,14 @@ import { IconButton } from "@mui/material";
 import { ConversationItem } from "./ConversationItem";
 import { useNavigate } from "react-router-dom";
 import LightModeIcon from '@mui/icons-material/LightMode';
+import {useDispatch,useSelector} from "react-redux"
+import {toggleTheme} from "./Features/themeSlice";
+
 export const Sidebar = () => {
   const navigate=useNavigate();
-  const [lightTheme,setLightTheme]=useState(true)
+  const dispatch=useDispatch();
+  const lightTheme = useSelector((state)=> state.themeKey);
+
   const [conversatons, setConversations] = useState([
     {
       name: "Test#1",
@@ -35,7 +40,9 @@ export const Sidebar = () => {
     <div className="sidebar-container">
       <div className={"sb-header" + (lightTheme ?"" : " dark")}>
         <div>
-          <IconButton>
+          <IconButton onClick={()=>{
+            navigate("welcome")
+          }}>
             <AccountCircleIcon className={"icon" + (lightTheme ?"" : " dark")}/>
           </IconButton>
         </div>
@@ -56,9 +63,7 @@ export const Sidebar = () => {
           }}>
             <AddCircleIcon className={"icon" + (lightTheme ?"" : " dark")}/>
           </IconButton>
-          <IconButton onClick={()=>{setLightTheme((prev)=>{
-            return !prev
-          })}}>
+          <IconButton onClick={()=>{dispatch(toggleTheme())}}>
             {lightTheme &&  <Brightness2Icon className={"icon" + (lightTheme ?"" : " dark")}/>}
             {!lightTheme &&  <LightModeIcon className={"icon" + (lightTheme ?"" : " dark")}/>}
           </IconButton>
@@ -66,7 +71,7 @@ export const Sidebar = () => {
       </div>
       <div className={"sb-search" + (lightTheme ?"" : " dark")}>
         <IconButton>
-          <SearchIcon />
+          <SearchIcon  className={"icon" + (lightTheme ?"" : " dark")}/>
         </IconButton>
 
         <input placeholder="search" className={"search-box" + (lightTheme ?"" : " dark")} />

@@ -5,8 +5,10 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import SendIcon from '@mui/icons-material/Send';
 import { MessageOther } from './MessageOther';
 import { MessageSelf } from './MessageSelf';
+import { useSelector } from 'react-redux';
 
 export const ChatArea = () => {
+  const lightTheme = useSelector((state)=> state.themeKey);
   const [conversatons,setConversations]=useState([
     {
         name:"Test#1",
@@ -26,9 +28,10 @@ export const ChatArea = () => {
 ])
 
 let props=conversatons[0]
+
   return (
     <div className='chatarea-container'>
-      <div className='chatArea-header'>
+      <div className={"chatArea-header" + (lightTheme ?"" : " dark")}>
       <p className='con-icon'>{props.name[0]}</p>
      <div className='header-text'>
      <p className='con-title'>{props.name}</p>
@@ -41,7 +44,7 @@ let props=conversatons[0]
     </div>
   
 
-      <div className='message-container'>
+      <div className={"message-container" + (lightTheme ?"" : " dark")}>
         <MessageOther/>
         <MessageSelf/>
         <MessageOther/>
@@ -54,8 +57,8 @@ let props=conversatons[0]
 
 
 
-      <div className='text-input-area'>
-        <input placeholder='Type a Message' className='search-box'/>
+      <div className={"text-input-area" + (lightTheme ?"" : " dark")}>
+        <input placeholder='Type a Message' className={"search-box" + (lightTheme ?"" : " dark")}/>
         <IconButton>
        <SendIcon/>
      </IconButton>
