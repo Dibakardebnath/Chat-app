@@ -39,15 +39,13 @@ export const Sidebar = () => {
   return (
     <div className="sidebar-container">
       <div className={"sb-header" + (lightTheme ?"" : " dark")}>
-        <div>
+        <div className="other-icons">
           <IconButton onClick={()=>{
             navigate("welcome")
           }}>
             <AccountCircleIcon className={"icon" + (lightTheme ?"" : " dark")}/>
           </IconButton>
-        </div>
-
-        <div>
+       
           <IconButton  onClick={()=>{
             navigate("users")
           }}>

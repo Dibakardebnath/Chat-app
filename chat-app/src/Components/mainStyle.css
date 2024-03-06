@@ -56,7 +56,7 @@
     color: rgba(0,0,0,0,54);
 }
 .sb-conversations{
-    border: 1px solid;
+    /* border: 1px solid; */
     background-color: white;
     border-radius: 20px;
     padding: 5px 10px;
@@ -335,8 +335,41 @@ background-color: #d9d9d9;
     /* gap: 10px; */
 }
 .list-tem:hover{
-    background-color: rgba(226,226,226);
+    /* background-color: rgba(226,226,226); */
 }
 .list-tem:active{
     background-color: white;
+}
+.other-icons{
+    display: flex;
+    flex: 1;
+    justify-content: space-evenly;
+}
+
+@media only screen and (max-width: 40em){
+    .sb-search{
+        display: none;
+    }
+    .sb-conversations{
+        display:none;
+    }
+    .sb-header{
+        flex-direction: column;
+        flex: 1;
+        width: min-content;
+    }
+    .other-icons{
+        flex-direction: column;
+    }
+    .chatarea-container{
+        flex: 1;
+    }
+    .sidebar-container{
+        flex: 0;
+    }
+    .main-container{
+        /* border: 5px solid blue; */
+        height: 100vh;
+        width: 100vh;
+    }
 }
