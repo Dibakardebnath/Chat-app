@@ -110,16 +110,6 @@ export const Login = () => {
           />
 
         <TextField
-        onChange={changeHandler}
-          id="standard-basic"
-          label="Enter Email Address"
-          variant="outlined"
-          color='secondary'
-          name='email'
-        
-        />
-
-        <TextField
          onChange={changeHandler}
           id="outlined-password-input"
           label="Password"

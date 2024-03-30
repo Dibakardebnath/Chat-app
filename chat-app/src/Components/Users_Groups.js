@@ -21,6 +21,7 @@ export const Users_Groups = () => {
           className='list-container'>
          <div className={"ug-header" + (lightTheme ?"" : " dark")}>
             <img src={logo}
+            alt='img'
             style={{height:"2rem",width:"2rem"}}
             />
             <p className='ug-title'>Online Users</p>

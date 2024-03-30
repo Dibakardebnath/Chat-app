@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import "./mainStyle.css";
 import { Sidebar } from './Sidebar';
-import { ChatArea } from './ChatArea';
-import {Users_Groups} from './Users_Groups'
-import { Welcome } from './Welcome';
-import { CreateGroup } from './CreateGroup';
+// import { ChatArea } from './ChatArea';
+// import {Users_Groups} from './Users_Groups'
+// import { Welcome } from './Welcome';
+// import { CreateGroup } from './CreateGroup';
 import { Outlet } from 'react-router-dom';
 export const MainContainer=()=>{
  
